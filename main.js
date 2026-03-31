@@ -47,3 +47,21 @@ function reset() {
   tampilkan()
 }
 
+//fungsi untuk mengedit harga barang berdasarkan nomor barang
+function edit() {
+  //ubah nomor barang menjadi index array dengan mengurangi 1
+  let index = Number(document.getElementById("nomor").value) - 1
+  // ambil harga editdari input
+  let harga = Number(document.getElementById("hargaedit").value)
+  
+  // periksa apakah indrx valid
+  if (index >= 0 && index < dataBarang.length) {
+    dataBarang[index] = harga
+  } else {
+    alert("Nomor barang tidak valid")
+  }
+tampilkan()
+document.getElementById("nomor").value =""
+document.getElementById("hargaedit").value =""
+
+}
